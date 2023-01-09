@@ -9,7 +9,7 @@ import {
   ActionIcon,
 } from "@mantine/core";
 
-function myQuotes(props) {
+function Quotes(props) {
   const { content, author } = props;
   return (
     <Paper shadow="xs" p="md" style={{ minWidth: "80vw" }}>
@@ -29,4 +29,4 @@ function myQuotes(props) {
   );
 }
 
-export default myQuotes;
+export default Quotes;
