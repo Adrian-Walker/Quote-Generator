@@ -1,5 +1,8 @@
+import { Center } from "@mantine/core";
+import { ToastContainer, Zoom } from "react-toastify";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Container } from "tabler-icons-react";
 // import Quote  from "tabler-icons-react";
 
 import Quotes from "./Quotes";
@@ -23,12 +26,21 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Quotes
-        author={quote ? quote.author : ""}
-        content={quote ? quote.content : ""}
-        getQuotes={getQuotes}
-      />
+    <div style={{ background: "#bebb57" }}>
+      <ToastContainer />
+      {/* <Container> */}
+        <Center
+          style={{
+            height: "100vh",
+          }}
+        >
+          <Quotes
+            author={quote ? quote.author : ""}
+            content={quote ? quote.content : ""}
+            getQuotes={getQuotes}
+          />
+        </Center>
+      {/* </Container> */}
     </div>
   );
 }
