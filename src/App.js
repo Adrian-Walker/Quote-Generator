@@ -7,7 +7,7 @@ import Quotes from "./Quotes";
 function App() {
   const [quote, setQuote] = useState(null);
 
-  const quotes = () => {
+  const getQuotes = () => {
     axios
       .get("https://api.quotable.io/random")
       .then((res) => {
@@ -19,7 +19,7 @@ function App() {
   };
 
   useEffect(() => {
-    quotes();
+    getQuotes();
   }, []);
 
   return (
@@ -27,6 +27,7 @@ function App() {
       <Quotes
         author={quote ? quote.author : ""}
         content={quote ? quote.content : ""}
+        getQuotes={getQuotes}
       />
     </div>
   );
