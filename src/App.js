@@ -27,7 +27,12 @@ function App() {
 
   return (
     <div style={{ background: "#bebb57" }}>
-      <ToastContainer />
+      <ToastContainer
+        transition={Zoom}
+        autoClose={3000}
+        hideProgressBar={true}
+        icon={false}
+      />
       {/* <Container> */}
       <Center
         style={{

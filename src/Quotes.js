@@ -9,6 +9,7 @@ import {
   Space,
   ActionIcon,
 } from "@mantine/core";
+import { toast } from "react-toastify";
 
 const synth = window.speechSynthesis;
 
@@ -38,6 +39,11 @@ function Quotes(props) {
     speak(content);
   };
 
+  const handleCopyQuote = () => {
+    navigator.clipboard.writeText(content);
+    toast.info("Quote Has Been Copied");
+  };
+
   return (
     <Paper shadow="xs" p="md" style={{ minWidth: "80vw" }}>
       <Blockquote cite={author ? `- ${author}` : ""}>{content}</Blockquote>
@@ -60,7 +66,7 @@ function Quotes(props) {
           </ActionIcon>
           <Space w="xs" />
 
-          <ActionIcon size="lg" variant="outline">
+          <ActionIcon size="lg" variant="outline" onClick={handleCopyQuote}>
             <Copy size={24} />
           </ActionIcon>
           <Space w="xs" />
