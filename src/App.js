@@ -29,17 +29,17 @@ function App() {
     <div style={{ background: "#bebb57" }}>
       <ToastContainer />
       {/* <Container> */}
-        <Center
-          style={{
-            height: "100vh",
-          }}
-        >
-          <Quotes
-            author={quote ? quote.author : ""}
-            content={quote ? quote.content : ""}
-            getQuotes={getQuotes}
-          />
-        </Center>
+      <Center
+        style={{
+          height: "100vh",
+        }}
+      >
+        <Quotes
+          author={quote ? quote.author : ""}
+          content={quote ? quote.content : ""}
+          getQuotes={getQuotes}
+        />
+      </Center>
       {/* </Container> */}
     </div>
   );
